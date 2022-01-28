@@ -77,17 +77,16 @@ fn main() {
     }
 
     print_status(&player_hand, &dealer_hand);
-    let dealer_score = calculate_score(&dealer_hand);
-    let player_score = calculate_score(&player_hand);
-    if dealer_score > 21 {
+    let scores = (calculate_score(&dealer_hand), calculate_score(&player_hand));
+    if scores.0 > 21 {
         println!("Dealer busts! You win!");
         return
     }
-    if dealer_score > player_score {
+    if scores.0 > scores.1 {
         println!("Dealer wins!");
         return
     }
-    if dealer_score < player_score {
+    if scores.0 < scores.1 {
         println!("You win!");
         return
     }
