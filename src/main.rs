@@ -40,8 +40,7 @@ fn print_status(player_cards: &Vec<&str>, dealer_cards: &Vec<&str>) {
 fn main() {
     let mut deck = vec!["A", "2", "3", "4", "5", "6", "7", "8", "9", "J", "Q", "K"];
     deck.shuffle(&mut thread_rng());
-    let mut player_hand: Deck = vec![];
-    let mut dealer_hand: Deck = vec![];
+    let (mut player_hand, mut dealer_hand): (Deck, Deck) = (vec![], vec![]);
 
     println!("Dealer draws first card.");
     draw(&mut dealer_hand, &mut deck);
