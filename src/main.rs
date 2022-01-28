@@ -33,7 +33,7 @@ fn print_player(name: &str, hand: &Deck) {
 }
 
 fn print_status(player_cards: &Vec<&str>, dealer_cards: &Vec<&str>) {
-    vec!["Player", "Dealer"].iter().zip(vec![player_cards, dealer_cards].iter()).for_each(|(name, hand)| print_player(name, hand));
+    ["Player", "Dealer"].iter().zip([player_cards, dealer_cards]).for_each(|(name, hand)| print_player(name, hand));
     println!();
 }
 
